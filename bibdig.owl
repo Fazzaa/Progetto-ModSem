@@ -1,0 +1,2722 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.semanticweb.org/fazza/progetto/bibliotecaDigitale"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="http://www.semanticweb.org/fazza/progetto/bibliotecaDigitale">
+    <Prefix name="" IRI="http://www.semanticweb.org/fazza/progetto/bibliotecaDigitale/"/>
+    <Prefix name="dc" IRI="http://purl.org/dc/elements/1.1/"/>
+    <Prefix name="bag" IRI="http://www.ontologydesignpatterns.org/cp/owl/bag.owl#"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="bibo" IRI="https://www.dublincore.org/specifications/bibo/bibo/bibo.rdf.xml#"/>
+    <Prefix name="foaf" IRI="http://xmlns.com/foaf/0.1/"/>
+    <Prefix name="list" IRI="http://www.ontologydesignpatterns.org/cp/owl/list.owl#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Prefix name="swrl" IRI="http://www.w3.org/2003/11/swrl#"/>
+    <Prefix name="vann" IRI="http://purl.org/vocab/vann/"/>
+    <Prefix name="swrla" IRI="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#"/>
+    <Prefix name="swrlb" IRI="http://www.w3.org/2003/11/swrlb#"/>
+    <Prefix name="dbpedia" IRI="http://dbpedia.org/resource/"/>
+    <Prefix name="sequence" IRI="http://www.ontologydesignpatterns.org/cp/owl/sequence.owl#"/>
+    <Prefix name="cpannotationschema" IRI="http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#"/>
+    <Import>http://www.ontologydesignpatterns.org/cp/owl/list.owl</Import>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="dc:creator"/>
+        <Literal>Fabio Luciani</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="dc:date"/>
+        <Literal>13/06/2024</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
+        <Literal xml:lang="it">L&apos;ontologia bibliotecaDigitale è stata pensata per modellare il dominio delle risorse testuali e non presenti sul web dal punto di vista bibliografico.</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="dc:title"/>
+        <Literal xml:lang="it">BibliotecaDigitale</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="vann:preferredNamespacePrefix"/>
+        <Literal>bibdig</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="vann:preferredNamespaceUri"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#anyURI">http://www.semanticweb.org/fazza/progetto/bibliotecaDigitale</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <Literal xml:lang="it">Ontologia per biblioteca digitale</Literal>
+    </Annotation>
+    <Declaration>
+        <Class abbreviatedIRI="dbpedia:Language"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="/Articolo"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="/ArticoloAccademico"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="/AudioLibro"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="/Autore"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="/AutoreDiSaga"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="/AutoreMultilingua"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="/CasaEditrice"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="/Formato"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="/Genere"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="/Libro"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="/LibroLungo"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="/Lingua"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="/Narratore"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="/Persona"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="/Podcast"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="/PuntataPodcast"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="/RisorsaAudio"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="/RisorsaDigitale"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="/SagaDiLibri"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="/SeriePodcast"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="/VolumeSaga"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="foaf:Person"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="bibo:Book"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="/contieneLibro"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="/contienePuntata"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="/haAutore"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="/haCasaEditrice"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="/haFormato"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="/haGenere"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="/haLingua"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="/haNarrato"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="/haNarratore"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="/haPubblicato"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="/haScritto"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="/scriveGenere"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="/scriveInLingua"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="/stessoGenereDi"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="/durataInOre"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="/haAnnoPubblicazione"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="/haISBN"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="/haNome"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="/haTitolo"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="/nazionalità"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="/nomeAutore"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="/nomeEditore"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="/nomeFormato"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="/nomeGenere"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="/nomeNarratore"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="/numeroPagine"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="/numeroPuntate"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="/numeroVolumi"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="/tradotto"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="/AudibleStudios"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="/Avventura"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="/BarbascuraX"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="/Bloomsbury"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="/EPUB"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="/Fantasy"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="/HarryPotterChamberOfSecrets"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="/HarryPotterDeathlyHallows"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="/HarryPotterGobletOfFire"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="/HarryPotterHalfBloodPrince"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="/HarryPotterOrderOfThePhoenix"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="/HarryPotterPhilosopherStone"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="/HarryPotterPrisonerOfAzkaban"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="/Inglese"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="/Italiano"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="/J.K.Rowling"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="/J.R.R.Tolkien"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="/LaCompagniaDellAnello"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="/Lolita"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="/MP3"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="/Mashenka"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="/MassimoPopolizio"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="/OlympiaPress"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="/PDF"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="/PrimaPuntataSBSS"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="/PrimoVolumeHarryPotter"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="/QuartoVolumeHarryPotter"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="/QuintoVolumeHarryPotter"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="/Romanzo"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="/Russo"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="/SBSS_NikolaTesla"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="/SBSS_ThomasEdison"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="/SagaDiHarryPotter"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="/SecondaPuntataSBSS"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="/SecondoVolumeHarryPotter"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="/SestoVolumeHarryPotter"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="/SettimoVolumeHarryPotter"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="/Slovo"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="/StorieBrutteSullaScienza"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="/TerzoVolumeHarryPotter"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="/VladimirNabokov"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="dc:creator"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="dc:date"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="dc:title"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="vann:preferredNamespacePrefix"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="vann:preferredNamespaceUri"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="swrla:isRuleEnabled"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="bag:hasItem"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="sequence:follows"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="sequence:precedes"/>
+    </Declaration>
+    <Declaration>
+        <Datatype abbreviatedIRI="xsd:gYear"/>
+    </Declaration>
+    <EquivalentClasses>
+        <Class abbreviatedIRI="dbpedia:Language"/>
+        <Class IRI="/Lingua"/>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="/Autore"/>
+        <ObjectMinCardinality cardinality="1">
+            <ObjectProperty IRI="/haScritto"/>
+            <Class IRI="/RisorsaDigitale"/>
+        </ObjectMinCardinality>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="/CasaEditrice"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="/haPubblicato"/>
+            <Class IRI="/RisorsaDigitale"/>
+        </ObjectSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="/Formato"/>
+        <ObjectOneOf>
+            <NamedIndividual IRI="/EPUB"/>
+            <NamedIndividual IRI="/MP3"/>
+            <NamedIndividual IRI="/PDF"/>
+        </ObjectOneOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="/Persona"/>
+        <Class abbreviatedIRI="foaf:Person"/>
+    </EquivalentClasses>
+    <SubClassOf>
+        <Class IRI="/Articolo"/>
+        <Class IRI="/RisorsaDigitale"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="/ArticoloAccademico"/>
+        <Class IRI="/Articolo"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="/AudioLibro"/>
+        <Class IRI="/RisorsaAudio"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="/Autore"/>
+        <Class IRI="/Persona"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="/AutoreDiSaga"/>
+        <Class IRI="/Autore"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="/AutoreMultilingua"/>
+        <Class IRI="/Autore"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="/Libro"/>
+        <Class abbreviatedIRI="bibo:Book"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="/LibroLungo"/>
+        <Class IRI="/Libro"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="/Narratore"/>
+        <Class IRI="/Persona"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="/Podcast"/>
+        <Class IRI="/RisorsaAudio"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="/PuntataPodcast"/>
+        <Class abbreviatedIRI="list:ListItem"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="/RisorsaAudio"/>
+        <Class IRI="/RisorsaDigitale"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="/SagaDiLibri"/>
+        <Class abbreviatedIRI="list:List"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="/SeriePodcast"/>
+        <Class abbreviatedIRI="list:List"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="/VolumeSaga"/>
+        <Class abbreviatedIRI="list:ListItem"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="bibo:Book"/>
+        <Class IRI="/RisorsaDigitale"/>
+    </SubClassOf>
+    <DisjointClasses>
+        <Class abbreviatedIRI="bag:Item"/>
+        <Class IRI="http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#Collection"/>
+        <Class IRI="/CasaEditrice"/>
+        <Class IRI="/Formato"/>
+        <Class IRI="/Genere"/>
+        <Class IRI="/Lingua"/>
+        <Class IRI="/RisorsaDigitale"/>
+        <Class abbreviatedIRI="foaf:Person"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="/Articolo"/>
+        <Class abbreviatedIRI="bibo:Book"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="/RisorsaAudio"/>
+        <Class abbreviatedIRI="bibo:Book"/>
+    </DisjointClasses>
+    <ClassAssertion>
+        <Class IRI="/CasaEditrice"/>
+        <NamedIndividual IRI="/AudibleStudios"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="/Genere"/>
+        <NamedIndividual IRI="/Avventura"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="/Autore"/>
+        <NamedIndividual IRI="/BarbascuraX"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="/Narratore"/>
+        <NamedIndividual IRI="/BarbascuraX"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="/CasaEditrice"/>
+        <NamedIndividual IRI="/Bloomsbury"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="/Formato"/>
+        <NamedIndividual IRI="/EPUB"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="/Genere"/>
+        <NamedIndividual IRI="/Fantasy"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="/Libro"/>
+        <NamedIndividual IRI="/HarryPotterChamberOfSecrets"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="/Libro"/>
+        <NamedIndividual IRI="/HarryPotterDeathlyHallows"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="/Libro"/>
+        <NamedIndividual IRI="/HarryPotterGobletOfFire"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="/Libro"/>
+        <NamedIndividual IRI="/HarryPotterHalfBloodPrince"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="/Libro"/>
+        <NamedIndividual IRI="/HarryPotterOrderOfThePhoenix"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="/Libro"/>
+        <NamedIndividual IRI="/HarryPotterPhilosopherStone"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="/Libro"/>
+        <NamedIndividual IRI="/HarryPotterPrisonerOfAzkaban"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="/Lingua"/>
+        <NamedIndividual IRI="/Inglese"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="/Lingua"/>
+        <NamedIndividual IRI="/Italiano"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="/Autore"/>
+        <NamedIndividual IRI="/J.K.Rowling"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="/Autore"/>
+        <NamedIndividual IRI="/J.R.R.Tolkien"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="/AudioLibro"/>
+        <NamedIndividual IRI="/LaCompagniaDellAnello"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="/Libro"/>
+        <NamedIndividual IRI="/Lolita"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="/Formato"/>
+        <NamedIndividual IRI="/MP3"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="/Libro"/>
+        <NamedIndividual IRI="/Mashenka"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="/Narratore"/>
+        <NamedIndividual IRI="/MassimoPopolizio"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="/CasaEditrice"/>
+        <NamedIndividual IRI="/OlympiaPress"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="/Formato"/>
+        <NamedIndividual IRI="/PDF"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="/PuntataPodcast"/>
+        <NamedIndividual IRI="/PrimaPuntataSBSS"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="/VolumeSaga"/>
+        <NamedIndividual IRI="/PrimoVolumeHarryPotter"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="/VolumeSaga"/>
+        <NamedIndividual IRI="/QuartoVolumeHarryPotter"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="/VolumeSaga"/>
+        <NamedIndividual IRI="/QuintoVolumeHarryPotter"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="/Genere"/>
+        <NamedIndividual IRI="/Romanzo"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="/Lingua"/>
+        <NamedIndividual IRI="/Russo"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="/Podcast"/>
+        <NamedIndividual IRI="/SBSS_NikolaTesla"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="/Podcast"/>
+        <NamedIndividual IRI="/SBSS_ThomasEdison"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="/SagaDiLibri"/>
+        <NamedIndividual IRI="/SagaDiHarryPotter"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="/PuntataPodcast"/>
+        <NamedIndividual IRI="/SecondaPuntataSBSS"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="/VolumeSaga"/>
+        <NamedIndividual IRI="/SecondoVolumeHarryPotter"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="/VolumeSaga"/>
+        <NamedIndividual IRI="/SestoVolumeHarryPotter"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="/VolumeSaga"/>
+        <NamedIndividual IRI="/SettimoVolumeHarryPotter"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="/CasaEditrice"/>
+        <NamedIndividual IRI="/Slovo"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="/SeriePodcast"/>
+        <NamedIndividual IRI="/StorieBrutteSullaScienza"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="/VolumeSaga"/>
+        <NamedIndividual IRI="/TerzoVolumeHarryPotter"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="/Autore"/>
+        <NamedIndividual IRI="/VladimirNabokov"/>
+    </ClassAssertion>
+    <DifferentIndividuals>
+        <NamedIndividual IRI="/BarbascuraX"/>
+        <NamedIndividual IRI="/J.K.Rowling"/>
+    </DifferentIndividuals>
+    <DifferentIndividuals>
+        <NamedIndividual IRI="/BarbascuraX"/>
+        <NamedIndividual IRI="/J.R.R.Tolkien"/>
+    </DifferentIndividuals>
+    <DifferentIndividuals>
+        <NamedIndividual IRI="/EPUB"/>
+        <NamedIndividual IRI="/MP3"/>
+        <NamedIndividual IRI="/PDF"/>
+    </DifferentIndividuals>
+    <DifferentIndividuals>
+        <NamedIndividual IRI="/HarryPotterChamberOfSecrets"/>
+        <NamedIndividual IRI="/HarryPotterDeathlyHallows"/>
+        <NamedIndividual IRI="/HarryPotterGobletOfFire"/>
+        <NamedIndividual IRI="/HarryPotterHalfBloodPrince"/>
+        <NamedIndividual IRI="/HarryPotterOrderOfThePhoenix"/>
+        <NamedIndividual IRI="/HarryPotterPhilosopherStone"/>
+        <NamedIndividual IRI="/HarryPotterPrisonerOfAzkaban"/>
+    </DifferentIndividuals>
+    <DifferentIndividuals>
+        <NamedIndividual IRI="/Inglese"/>
+        <NamedIndividual IRI="/Italiano"/>
+        <NamedIndividual IRI="/Russo"/>
+    </DifferentIndividuals>
+    <DifferentIndividuals>
+        <NamedIndividual IRI="/J.K.Rowling"/>
+        <NamedIndividual IRI="/J.R.R.Tolkien"/>
+    </DifferentIndividuals>
+    <DifferentIndividuals>
+        <NamedIndividual IRI="/PrimaPuntataSBSS"/>
+        <NamedIndividual IRI="/SecondaPuntataSBSS"/>
+    </DifferentIndividuals>
+    <DifferentIndividuals>
+        <NamedIndividual IRI="/PrimoVolumeHarryPotter"/>
+        <NamedIndividual IRI="/QuartoVolumeHarryPotter"/>
+        <NamedIndividual IRI="/QuintoVolumeHarryPotter"/>
+        <NamedIndividual IRI="/SecondoVolumeHarryPotter"/>
+        <NamedIndividual IRI="/SestoVolumeHarryPotter"/>
+        <NamedIndividual IRI="/TerzoVolumeHarryPotter"/>
+    </DifferentIndividuals>
+    <DifferentIndividuals>
+        <NamedIndividual IRI="/SBSS_NikolaTesla"/>
+        <NamedIndividual IRI="/SBSS_ThomasEdison"/>
+    </DifferentIndividuals>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="/haPubblicato"/>
+        <NamedIndividual IRI="/AudibleStudios"/>
+        <NamedIndividual IRI="/SBSS_ThomasEdison"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="/haAutore"/>
+        <NamedIndividual IRI="/HarryPotterChamberOfSecrets"/>
+        <NamedIndividual IRI="/J.K.Rowling"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="/haCasaEditrice"/>
+        <NamedIndividual IRI="/HarryPotterChamberOfSecrets"/>
+        <NamedIndividual IRI="/Bloomsbury"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="/haFormato"/>
+        <NamedIndividual IRI="/HarryPotterChamberOfSecrets"/>
+        <NamedIndividual IRI="/PDF"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="/haGenere"/>
+        <NamedIndividual IRI="/HarryPotterChamberOfSecrets"/>
+        <NamedIndividual IRI="/Avventura"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="/haGenere"/>
+        <NamedIndividual IRI="/HarryPotterChamberOfSecrets"/>
+        <NamedIndividual IRI="/Fantasy"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="/haLingua"/>
+        <NamedIndividual IRI="/HarryPotterChamberOfSecrets"/>
+        <NamedIndividual IRI="/Inglese"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="/haAutore"/>
+        <NamedIndividual IRI="/HarryPotterDeathlyHallows"/>
+        <NamedIndividual IRI="/J.K.Rowling"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="/haCasaEditrice"/>
+        <NamedIndividual IRI="/HarryPotterDeathlyHallows"/>
+        <NamedIndividual IRI="/Bloomsbury"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="/haFormato"/>
+        <NamedIndividual IRI="/HarryPotterDeathlyHallows"/>
+        <NamedIndividual IRI="/EPUB"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="/haGenere"/>
+        <NamedIndividual IRI="/HarryPotterDeathlyHallows"/>
+        <NamedIndividual IRI="/Avventura"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="/haGenere"/>
+        <NamedIndividual IRI="/HarryPotterDeathlyHallows"/>
+        <NamedIndividual IRI="/Fantasy"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="/haLingua"/>
+        <NamedIndividual IRI="/HarryPotterDeathlyHallows"/>
+        <NamedIndividual IRI="/Inglese"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="/haAutore"/>
+        <NamedIndividual IRI="/HarryPotterGobletOfFire"/>
+        <NamedIndividual IRI="/J.K.Rowling"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="/haCasaEditrice"/>
+        <NamedIndividual IRI="/HarryPotterGobletOfFire"/>
+        <NamedIndividual IRI="/Bloomsbury"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="/haFormato"/>
+        <NamedIndividual IRI="/HarryPotterGobletOfFire"/>
+        <NamedIndividual IRI="/EPUB"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="/haGenere"/>
+        <NamedIndividual IRI="/HarryPotterGobletOfFire"/>
+        <NamedIndividual IRI="/Avventura"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="/haGenere"/>
+        <NamedIndividual IRI="/HarryPotterGobletOfFire"/>
+        <NamedIndividual IRI="/Fantasy"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="/haAutore"/>
+        <NamedIndividual IRI="/HarryPotterHalfBloodPrince"/>
+        <NamedIndividual IRI="/J.K.Rowling"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="/haCasaEditrice"/>
+        <NamedIndividual IRI="/HarryPotterHalfBloodPrince"/>
+        <NamedIndividual IRI="/Bloomsbury"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="/haFormato"/>
+        <NamedIndividual IRI="/HarryPotterHalfBloodPrince"/>
+        <NamedIndividual IRI="/PDF"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="/haGenere"/>
+        <NamedIndividual IRI="/HarryPotterHalfBloodPrince"/>
+        <NamedIndividual IRI="/Avventura"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="/haGenere"/>
+        <NamedIndividual IRI="/HarryPotterHalfBloodPrince"/>
+        <NamedIndividual IRI="/Fantasy"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="/haLingua"/>
+        <NamedIndividual IRI="/HarryPotterHalfBloodPrince"/>
+        <NamedIndividual IRI="/Inglese"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="/haAutore"/>
+        <NamedIndividual IRI="/HarryPotterOrderOfThePhoenix"/>
+        <NamedIndividual IRI="/J.K.Rowling"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="/haCasaEditrice"/>
+        <NamedIndividual IRI="/HarryPotterOrderOfThePhoenix"/>
+        <NamedIndividual IRI="/Bloomsbury"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="/haFormato"/>
+        <NamedIndividual IRI="/HarryPotterOrderOfThePhoenix"/>
+        <NamedIndividual IRI="/PDF"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="/haGenere"/>
+        <NamedIndividual IRI="/HarryPotterOrderOfThePhoenix"/>
+        <NamedIndividual IRI="/Avventura"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="/haGenere"/>
+        <NamedIndividual IRI="/HarryPotterOrderOfThePhoenix"/>
+        <NamedIndividual IRI="/Fantasy"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="/haLingua"/>
+        <NamedIndividual IRI="/HarryPotterOrderOfThePhoenix"/>
+        <NamedIndividual IRI="/Inglese"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="/haAutore"/>
+        <NamedIndividual IRI="/HarryPotterPhilosopherStone"/>
+        <NamedIndividual IRI="/J.K.Rowling"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="/haCasaEditrice"/>
+        <NamedIndividual IRI="/HarryPotterPhilosopherStone"/>
+        <NamedIndividual IRI="/Bloomsbury"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="/haFormato"/>
+        <NamedIndividual IRI="/HarryPotterPhilosopherStone"/>
+        <NamedIndividual IRI="/EPUB"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="/haGenere"/>
+        <NamedIndividual IRI="/HarryPotterPhilosopherStone"/>
+        <NamedIndividual IRI="/Avventura"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="/haGenere"/>
+        <NamedIndividual IRI="/HarryPotterPhilosopherStone"/>
+        <NamedIndividual IRI="/Fantasy"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="/haLingua"/>
+        <NamedIndividual IRI="/HarryPotterPhilosopherStone"/>
+        <NamedIndividual IRI="/Inglese"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="/stessoGenereDi"/>
+        <NamedIndividual IRI="/HarryPotterPhilosopherStone"/>
+        <NamedIndividual IRI="/HarryPotterChamberOfSecrets"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="/haAutore"/>
+        <NamedIndividual IRI="/HarryPotterPrisonerOfAzkaban"/>
+        <NamedIndividual IRI="/J.K.Rowling"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="/haCasaEditrice"/>
+        <NamedIndividual IRI="/HarryPotterPrisonerOfAzkaban"/>
+        <NamedIndividual IRI="/Bloomsbury"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="/haFormato"/>
+        <NamedIndividual IRI="/HarryPotterPrisonerOfAzkaban"/>
+        <NamedIndividual IRI="/EPUB"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="/haGenere"/>
+        <NamedIndividual IRI="/HarryPotterPrisonerOfAzkaban"/>
+        <NamedIndividual IRI="/Avventura"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="/haGenere"/>
+        <NamedIndividual IRI="/HarryPotterPrisonerOfAzkaban"/>
+        <NamedIndividual IRI="/Fantasy"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="/haLingua"/>
+        <NamedIndividual IRI="/HarryPotterPrisonerOfAzkaban"/>
+        <NamedIndividual IRI="/Inglese"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="/haScritto"/>
+        <NamedIndividual IRI="/J.R.R.Tolkien"/>
+        <NamedIndividual IRI="/LaCompagniaDellAnello"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="/haAutore"/>
+        <NamedIndividual IRI="/LaCompagniaDellAnello"/>
+        <NamedIndividual IRI="/J.R.R.Tolkien"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="/haFormato"/>
+        <NamedIndividual IRI="/LaCompagniaDellAnello"/>
+        <NamedIndividual IRI="/MP3"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="/haGenere"/>
+        <NamedIndividual IRI="/LaCompagniaDellAnello"/>
+        <NamedIndividual IRI="/Fantasy"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="/haGenere"/>
+        <NamedIndividual IRI="/LaCompagniaDellAnello"/>
+        <NamedIndividual IRI="/Romanzo"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="/haLingua"/>
+        <NamedIndividual IRI="/LaCompagniaDellAnello"/>
+        <NamedIndividual IRI="/Inglese"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="/haAutore"/>
+        <NamedIndividual IRI="/Lolita"/>
+        <NamedIndividual IRI="/VladimirNabokov"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="/haFormato"/>
+        <NamedIndividual IRI="/Lolita"/>
+        <NamedIndividual IRI="/EPUB"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="/haGenere"/>
+        <NamedIndividual IRI="/Lolita"/>
+        <NamedIndividual IRI="/Romanzo"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="/haLingua"/>
+        <NamedIndividual IRI="/Lolita"/>
+        <NamedIndividual IRI="/Inglese"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="/haAutore"/>
+        <NamedIndividual IRI="/Mashenka"/>
+        <NamedIndividual IRI="/VladimirNabokov"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="/haFormato"/>
+        <NamedIndividual IRI="/Mashenka"/>
+        <NamedIndividual IRI="/PDF"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="/haGenere"/>
+        <NamedIndividual IRI="/Mashenka"/>
+        <NamedIndividual IRI="/Romanzo"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="/haLingua"/>
+        <NamedIndividual IRI="/Mashenka"/>
+        <NamedIndividual IRI="/Russo"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="/haNarrato"/>
+        <NamedIndividual IRI="/MassimoPopolizio"/>
+        <NamedIndividual IRI="/LaCompagniaDellAnello"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="/haPubblicato"/>
+        <NamedIndividual IRI="/OlympiaPress"/>
+        <NamedIndividual IRI="/Lolita"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="/contienePuntata"/>
+        <NamedIndividual IRI="/PrimaPuntataSBSS"/>
+        <NamedIndividual IRI="/SBSS_ThomasEdison"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="/contieneLibro"/>
+        <NamedIndividual IRI="/PrimoVolumeHarryPotter"/>
+        <NamedIndividual IRI="/HarryPotterPhilosopherStone"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="/contieneLibro"/>
+        <NamedIndividual IRI="/QuartoVolumeHarryPotter"/>
+        <NamedIndividual IRI="/HarryPotterGobletOfFire"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="/contieneLibro"/>
+        <NamedIndividual IRI="/QuintoVolumeHarryPotter"/>
+        <NamedIndividual IRI="/HarryPotterOrderOfThePhoenix"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="/haAutore"/>
+        <NamedIndividual IRI="/SBSS_NikolaTesla"/>
+        <NamedIndividual IRI="/BarbascuraX"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="/haCasaEditrice"/>
+        <NamedIndividual IRI="/SBSS_NikolaTesla"/>
+        <NamedIndividual IRI="/AudibleStudios"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="/haLingua"/>
+        <NamedIndividual IRI="/SBSS_NikolaTesla"/>
+        <NamedIndividual IRI="/Italiano"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="/haNarratore"/>
+        <NamedIndividual IRI="/SBSS_NikolaTesla"/>
+        <NamedIndividual IRI="/BarbascuraX"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="/haAutore"/>
+        <NamedIndividual IRI="/SBSS_ThomasEdison"/>
+        <NamedIndividual IRI="/BarbascuraX"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="/haLingua"/>
+        <NamedIndividual IRI="/SBSS_ThomasEdison"/>
+        <NamedIndividual IRI="/Italiano"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="/haNarratore"/>
+        <NamedIndividual IRI="/SBSS_ThomasEdison"/>
+        <NamedIndividual IRI="/BarbascuraX"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="list:hasFirstItem"/>
+        <NamedIndividual IRI="/SagaDiHarryPotter"/>
+        <NamedIndividual IRI="/PrimoVolumeHarryPotter"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="/contienePuntata"/>
+        <NamedIndividual IRI="/SecondaPuntataSBSS"/>
+        <NamedIndividual IRI="/SBSS_NikolaTesla"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="/contieneLibro"/>
+        <NamedIndividual IRI="/SecondoVolumeHarryPotter"/>
+        <NamedIndividual IRI="/HarryPotterChamberOfSecrets"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="/contieneLibro"/>
+        <NamedIndividual IRI="/SestoVolumeHarryPotter"/>
+        <NamedIndividual IRI="/HarryPotterHalfBloodPrince"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="/contieneLibro"/>
+        <NamedIndividual IRI="/SettimoVolumeHarryPotter"/>
+        <NamedIndividual IRI="/HarryPotterDeathlyHallows"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="/haPubblicato"/>
+        <NamedIndividual IRI="/Slovo"/>
+        <NamedIndividual IRI="/Mashenka"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="list:hasFirstItem"/>
+        <NamedIndividual IRI="/StorieBrutteSullaScienza"/>
+        <NamedIndividual IRI="/PrimaPuntataSBSS"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="/contieneLibro"/>
+        <NamedIndividual IRI="/TerzoVolumeHarryPotter"/>
+        <NamedIndividual IRI="/HarryPotterPrisonerOfAzkaban"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="/haScritto"/>
+        <NamedIndividual IRI="/VladimirNabokov"/>
+        <NamedIndividual IRI="/Mashenka"/>
+    </ObjectPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="/nomeGenere"/>
+        <NamedIndividual IRI="/Avventura"/>
+        <Literal>Avventura</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="/nomeFormato"/>
+        <NamedIndividual IRI="/EPUB"/>
+        <Literal>EPUB</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="/nomeGenere"/>
+        <NamedIndividual IRI="/Fantasy"/>
+        <Literal>Fantasy</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="/haAnnoPubblicazione"/>
+        <NamedIndividual IRI="/HarryPotterChamberOfSecrets"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#gYear">1998</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="/haTitolo"/>
+        <NamedIndividual IRI="/HarryPotterChamberOfSecrets"/>
+        <Literal>Harry Potter and the Chamber of Secrets</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="/numeroPagine"/>
+        <NamedIndividual IRI="/HarryPotterChamberOfSecrets"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#positiveInteger">251</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="/tradotto"/>
+        <NamedIndividual IRI="/HarryPotterChamberOfSecrets"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="/haAnnoPubblicazione"/>
+        <NamedIndividual IRI="/HarryPotterDeathlyHallows"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#gYear">2007</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="/haISBN"/>
+        <NamedIndividual IRI="/HarryPotterDeathlyHallows"/>
+        <Literal>0-7475-9105-9</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="/numeroPagine"/>
+        <NamedIndividual IRI="/HarryPotterDeathlyHallows"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#positiveInteger">607</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="/tradotto"/>
+        <NamedIndividual IRI="/HarryPotterDeathlyHallows"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="/haAnnoPubblicazione"/>
+        <NamedIndividual IRI="/HarryPotterGobletOfFire"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#gYear">2000</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="/haTitolo"/>
+        <NamedIndividual IRI="/HarryPotterGobletOfFire"/>
+        <Literal>Harry Potter and the Goblet of Fire</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="/numeroPagine"/>
+        <NamedIndividual IRI="/HarryPotterGobletOfFire"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#positiveInteger">636</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="/tradotto"/>
+        <NamedIndividual IRI="/HarryPotterGobletOfFire"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="/haAnnoPubblicazione"/>
+        <NamedIndividual IRI="/HarryPotterHalfBloodPrince"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#gYear">2005</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="/haISBN"/>
+        <NamedIndividual IRI="/HarryPotterHalfBloodPrince"/>
+        <Literal>0-7475-8108-8</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="/haTitolo"/>
+        <NamedIndividual IRI="/HarryPotterHalfBloodPrince"/>
+        <Literal>Harry Potter and the Half-Blood Prince</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="/numeroPagine"/>
+        <NamedIndividual IRI="/HarryPotterHalfBloodPrince"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#positiveInteger">607</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="/tradotto"/>
+        <NamedIndividual IRI="/HarryPotterHalfBloodPrince"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="/haAnnoPubblicazione"/>
+        <NamedIndividual IRI="/HarryPotterOrderOfThePhoenix"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#gYear">2003</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="/haISBN"/>
+        <NamedIndividual IRI="/HarryPotterOrderOfThePhoenix"/>
+        <Literal>0-7475-5100-6</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="/haTitolo"/>
+        <NamedIndividual IRI="/HarryPotterOrderOfThePhoenix"/>
+        <Literal>Harry Potter and the Order of the Phoenix</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="/numeroPagine"/>
+        <NamedIndividual IRI="/HarryPotterOrderOfThePhoenix"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#positiveInteger">766</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="/tradotto"/>
+        <NamedIndividual IRI="/HarryPotterOrderOfThePhoenix"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="/haAnnoPubblicazione"/>
+        <NamedIndividual IRI="/HarryPotterPhilosopherStone"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#gYear">1997</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="/haTitolo"/>
+        <NamedIndividual IRI="/HarryPotterPhilosopherStone"/>
+        <Literal>Harry Potter and the Philosopher&apos;s Stone</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="/numeroPagine"/>
+        <NamedIndividual IRI="/HarryPotterPhilosopherStone"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#positiveInteger">251</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="/tradotto"/>
+        <NamedIndividual IRI="/HarryPotterPhilosopherStone"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="/haAnnoPubblicazione"/>
+        <NamedIndividual IRI="/HarryPotterPrisonerOfAzkaban"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#gYear">1999</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="/haTitolo"/>
+        <NamedIndividual IRI="/HarryPotterPrisonerOfAzkaban"/>
+        <Literal>Harry Potter and the Prisoner of Azkaban</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="/numeroPagine"/>
+        <NamedIndividual IRI="/HarryPotterPrisonerOfAzkaban"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#positiveInteger">317</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="/tradotto"/>
+        <NamedIndividual IRI="/HarryPotterPrisonerOfAzkaban"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="/nazionalità"/>
+        <NamedIndividual IRI="/J.K.Rowling"/>
+        <Literal>Britannica</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="/nomeAutore"/>
+        <NamedIndividual IRI="/J.K.Rowling"/>
+        <Literal>J.K. Rowling</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="/nazionalità"/>
+        <NamedIndividual IRI="/J.R.R.Tolkien"/>
+        <Literal>Britannico</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="/nomeAutore"/>
+        <NamedIndividual IRI="/J.R.R.Tolkien"/>
+        <Literal>John Ronald Reuel Tolkien</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="/durataInOre"/>
+        <NamedIndividual IRI="/LaCompagniaDellAnello"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">23</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="/haTitolo"/>
+        <NamedIndividual IRI="/LaCompagniaDellAnello"/>
+        <Literal>Il Signore Degli Anelli - La Compagnia Dell&apos;Anello</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="/tradotto"/>
+        <NamedIndividual IRI="/LaCompagniaDellAnello"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="/haAnnoPubblicazione"/>
+        <NamedIndividual IRI="/Lolita"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#gYear">1955</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="/numeroPagine"/>
+        <NamedIndividual IRI="/Lolita"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">336</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="/nomeFormato"/>
+        <NamedIndividual IRI="/MP3"/>
+        <Literal>MP3</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="/haAnnoPubblicazione"/>
+        <NamedIndividual IRI="/Mashenka"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#gYear">1926</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="/haTitolo"/>
+        <NamedIndividual IRI="/Mashenka"/>
+        <Literal>Машенька</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="/numeroPagine"/>
+        <NamedIndividual IRI="/Mashenka"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">114</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="/tradotto"/>
+        <NamedIndividual IRI="/Mashenka"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="/nomeNarratore"/>
+        <NamedIndividual IRI="/MassimoPopolizio"/>
+        <Literal>Massimo Popolizio</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="/nomeFormato"/>
+        <NamedIndividual IRI="/PDF"/>
+        <Literal>PDF</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="/nomeGenere"/>
+        <NamedIndividual IRI="/Romanzo"/>
+        <Literal>Romanzo</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="/haAnnoPubblicazione"/>
+        <NamedIndividual IRI="/SBSS_NikolaTesla"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#gYear">2021</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="/haTitolo"/>
+        <NamedIndividual IRI="/SBSS_NikolaTesla"/>
+        <Literal>Storie brutte sulla scienza 2 
+Nikola Tesla - Il mago dell&apos;elettrone</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="/haAnnoPubblicazione"/>
+        <NamedIndividual IRI="/SBSS_ThomasEdison"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#gYear">2021</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="/haTitolo"/>
+        <NamedIndividual IRI="/SBSS_ThomasEdison"/>
+        <Literal>Storie brutte sulla scienza 1
+Thomas Edison - imprenditore paraculo</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="/numeroVolumi"/>
+        <NamedIndividual IRI="/SagaDiHarryPotter"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#positiveInteger">7</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="/numeroPuntate"/>
+        <NamedIndividual IRI="/StorieBrutteSullaScienza"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#positiveInteger">8</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="/nazionalità"/>
+        <NamedIndividual IRI="/VladimirNabokov"/>
+        <Literal>Russa</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="/nomeAutore"/>
+        <NamedIndividual IRI="/VladimirNabokov"/>
+        <Literal>Vladimir Vladimirovich Nabokov</Literal>
+    </DataPropertyAssertion>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="/contieneLibro"/>
+        <ObjectProperty abbreviatedIRI="bag:itemContent"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="/contienePuntata"/>
+        <ObjectProperty abbreviatedIRI="bag:itemContent"/>
+    </SubObjectPropertyOf>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="/haAutore"/>
+        <ObjectProperty IRI="/haScritto"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="/haCasaEditrice"/>
+        <ObjectProperty IRI="/haPubblicato"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="/haNarrato"/>
+        <ObjectProperty IRI="/haNarratore"/>
+    </InverseObjectProperties>
+    <SymmetricObjectProperty>
+        <ObjectProperty IRI="/stessoGenereDi"/>
+    </SymmetricObjectProperty>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="/contieneLibro"/>
+        <Class IRI="/VolumeSaga"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="/contienePuntata"/>
+        <Class IRI="/PuntataPodcast"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="/haAutore"/>
+        <Class IRI="/RisorsaDigitale"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="/haCasaEditrice"/>
+        <Class IRI="/RisorsaDigitale"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="/haFormato"/>
+        <Class IRI="/RisorsaDigitale"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="/haGenere"/>
+        <Class IRI="/RisorsaDigitale"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="/haLingua"/>
+        <Class IRI="/RisorsaDigitale"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="/haNarrato"/>
+        <Class IRI="/Narratore"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="/haNarratore"/>
+        <Class IRI="/RisorsaAudio"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="/haPubblicato"/>
+        <Class IRI="/CasaEditrice"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="/haScritto"/>
+        <Class IRI="/Autore"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="/scriveGenere"/>
+        <Class IRI="/Autore"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="/scriveInLingua"/>
+        <Class IRI="/Autore"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="/stessoGenereDi"/>
+        <Class IRI="/RisorsaDigitale"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="/contieneLibro"/>
+        <Class IRI="/Libro"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="/contienePuntata"/>
+        <Class IRI="/Podcast"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="/haAutore"/>
+        <Class IRI="/Autore"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="/haCasaEditrice"/>
+        <Class IRI="/CasaEditrice"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="/haFormato"/>
+        <Class IRI="/Formato"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="/haGenere"/>
+        <Class IRI="/Genere"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="/haLingua"/>
+        <Class IRI="/Lingua"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="/haNarrato"/>
+        <Class IRI="/RisorsaAudio"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="/haNarratore"/>
+        <Class IRI="/Narratore"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="/haPubblicato"/>
+        <Class IRI="/RisorsaDigitale"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="/haScritto"/>
+        <Class IRI="/RisorsaDigitale"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="/scriveGenere"/>
+        <Class IRI="/Genere"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="/scriveInLingua"/>
+        <Class IRI="/Lingua"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="/stessoGenereDi"/>
+        <Class IRI="/RisorsaDigitale"/>
+    </ObjectPropertyRange>
+    <SubObjectPropertyOf>
+        <ObjectPropertyChain>
+            <ObjectProperty IRI="/haScritto"/>
+            <ObjectProperty IRI="/haGenere"/>
+        </ObjectPropertyChain>
+        <ObjectProperty IRI="/scriveGenere"/>
+    </SubObjectPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="/nomeAutore"/>
+        <DataProperty IRI="/haNome"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="/nomeEditore"/>
+        <DataProperty IRI="/haNome"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="/nomeNarratore"/>
+        <DataProperty IRI="/haNome"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="/numeroPuntate"/>
+        <DataProperty abbreviatedIRI="bag:size"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="/numeroVolumi"/>
+        <DataProperty abbreviatedIRI="bag:size"/>
+    </SubDataPropertyOf>
+    <FunctionalDataProperty>
+        <DataProperty IRI="/haISBN"/>
+    </FunctionalDataProperty>
+    <DataPropertyDomain>
+        <DataProperty IRI="/durataInOre"/>
+        <Class IRI="/RisorsaAudio"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="/haAnnoPubblicazione"/>
+        <Class IRI="/RisorsaDigitale"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="/haISBN"/>
+        <Class IRI="/RisorsaDigitale"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="/haNome"/>
+        <Class abbreviatedIRI="owl:Thing"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="/haTitolo"/>
+        <Class IRI="/RisorsaDigitale"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="/nazionalità"/>
+        <Class IRI="/Autore"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="/nomeAutore"/>
+        <Class IRI="/Autore"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="/nomeEditore"/>
+        <Class IRI="/CasaEditrice"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="/nomeFormato"/>
+        <Class IRI="/Formato"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="/nomeGenere"/>
+        <Class IRI="/Genere"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="/nomeNarratore"/>
+        <Class IRI="/Narratore"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="/numeroPagine"/>
+        <Class IRI="/RisorsaDigitale"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="/numeroPuntate"/>
+        <Class IRI="/SeriePodcast"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="/numeroVolumi"/>
+        <Class IRI="/SagaDiLibri"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="/tradotto"/>
+        <Class IRI="/RisorsaDigitale"/>
+    </DataPropertyDomain>
+    <DataPropertyRange>
+        <DataProperty IRI="/durataInOre"/>
+        <Datatype abbreviatedIRI="xsd:decimal"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="/haAnnoPubblicazione"/>
+        <Datatype abbreviatedIRI="xsd:gYear"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="/haISBN"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="/haNome"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="/haTitolo"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="/nazionalità"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="/nomeAutore"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="/nomeEditore"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="/nomeFormato"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="/nomeGenere"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="/nomeNarratore"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="/numeroPagine"/>
+        <Datatype abbreviatedIRI="xsd:positiveInteger"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="/numeroPuntate"/>
+        <Datatype abbreviatedIRI="xsd:positiveInteger"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="/numeroVolumi"/>
+        <Datatype abbreviatedIRI="xsd:positiveInteger"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="/tradotto"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
+    </DataPropertyRange>
+    <DLSafeRule>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="swrla:isRuleEnabled"/>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+            <Literal>Questa regola inferisce la lingua in cui un autore scrive basandosi sulla lingua di un libro che ha scritto.</Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+            <Literal>Regola Lingua dell&apos;Autore</Literal>
+        </Annotation>
+        <Body>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="/haScritto"/>
+                <Variable IRI="/a"/>
+                <Variable IRI="/l"/>
+            </ObjectPropertyAtom>
+            <ClassAtom>
+                <Class IRI="/Autore"/>
+                <Variable IRI="/a"/>
+            </ClassAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="/haLingua"/>
+                <Variable IRI="/l"/>
+                <Variable IRI="/lang"/>
+            </ObjectPropertyAtom>
+        </Body>
+        <Head>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="/scriveInLingua"/>
+                <Variable IRI="/a"/>
+                <Variable IRI="/lang"/>
+            </ObjectPropertyAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="swrla:isRuleEnabled"/>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+            <Literal>Un autore è multilingue se ha scritto risorse in almeno due lingue diverse.</Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+            <Literal>Regola Autore Multilingue</Literal>
+        </Annotation>
+        <Body>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="/haScritto"/>
+                <Variable IRI="/a"/>
+                <Variable IRI="/r1"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="/haScritto"/>
+                <Variable IRI="/a"/>
+                <Variable IRI="/r2"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="/haLingua"/>
+                <Variable IRI="/r1"/>
+                <Variable IRI="/lang1"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="/haLingua"/>
+                <Variable IRI="/r2"/>
+                <Variable IRI="/lang2"/>
+            </ObjectPropertyAtom>
+            <ClassAtom>
+                <Class IRI="/Autore"/>
+                <Variable IRI="/a"/>
+            </ClassAtom>
+            <DifferentIndividualsAtom>
+                <Variable IRI="/lang1"/>
+                <Variable IRI="/lang2"/>
+            </DifferentIndividualsAtom>
+        </Body>
+        <Head>
+            <ClassAtom>
+                <Class IRI="/AutoreMultilingua"/>
+                <Variable IRI="/a"/>
+            </ClassAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="swrla:isRuleEnabled"/>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+            <Literal>Definiamo un libro lungo come un libro con più di 500 pagine</Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+            <Literal>Regola Libri Lunghi</Literal>
+        </Annotation>
+        <Body>
+            <ClassAtom>
+                <Class IRI="/Libro"/>
+                <Variable IRI="/l"/>
+            </ClassAtom>
+            <DataPropertyAtom>
+                <DataProperty IRI="/numeroPagine"/>
+                <Variable IRI="/l"/>
+                <Variable IRI="/p"/>
+            </DataPropertyAtom>
+            <BuiltInAtom abbreviatedIRI="swrlb:greaterThan">
+                <Variable IRI="/p"/>
+                <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">500</Literal>
+            </BuiltInAtom>
+        </Body>
+        <Head>
+            <ClassAtom>
+                <Class IRI="/LibroLungo"/>
+                <Variable IRI="/l"/>
+            </ClassAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="swrla:isRuleEnabled"/>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+            <Literal>Due libri che appartengono alla stessa saga hanno lo stesso genere</Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+            <Literal>Regola stesso genere di libro</Literal>
+        </Annotation>
+        <Body>
+            <ClassAtom>
+                <Class IRI="/Libro"/>
+                <Variable IRI="/l1"/>
+            </ClassAtom>
+            <ClassAtom>
+                <Class IRI="/Libro"/>
+                <Variable IRI="/l2"/>
+            </ClassAtom>
+            <DifferentIndividualsAtom>
+                <Variable IRI="/l1"/>
+                <Variable IRI="/l2"/>
+            </DifferentIndividualsAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="/contieneLibro"/>
+                <Variable IRI="/v1"/>
+                <Variable IRI="/l1"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="/contieneLibro"/>
+                <Variable IRI="/v2"/>
+                <Variable IRI="/l2"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="bag:itemOf"/>
+                <Variable IRI="/v1"/>
+                <Variable IRI="/bag"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="bag:itemOf"/>
+                <Variable IRI="/v2"/>
+                <Variable IRI="/bag"/>
+            </ObjectPropertyAtom>
+            <ClassAtom>
+                <Class IRI="/SagaDiLibri"/>
+                <Variable IRI="/bag"/>
+            </ClassAtom>
+        </Body>
+        <Head>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="/stessoGenereDi"/>
+                <Variable IRI="/l1"/>
+                <Variable IRI="/l2"/>
+            </ObjectPropertyAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="swrla:isRuleEnabled"/>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+            <Literal>Un autore è un autore di saga se scrive almeno un libro facente parte di una saga</Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+            <Literal>Regola Autore di Saga</Literal>
+        </Annotation>
+        <Body>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="/haScritto"/>
+                <Variable IRI="/a"/>
+                <Variable IRI="/r1"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="/contieneLibro"/>
+                <Variable IRI="/volume"/>
+                <Variable IRI="/r1"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="bag:itemOf"/>
+                <Variable IRI="/volume"/>
+                <Variable IRI="/bag"/>
+            </ObjectPropertyAtom>
+            <ClassAtom>
+                <Class IRI="/SagaDiLibri"/>
+                <Variable IRI="/bag"/>
+            </ClassAtom>
+        </Body>
+        <Head>
+            <ClassAtom>
+                <Class IRI="/AutoreDiSaga"/>
+                <Variable IRI="/a"/>
+            </ClassAtom>
+        </Head>
+    </DLSafeRule>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>/Articolo</IRI>
+        <Literal xml:lang="it">Un documento breve disponibile in formato digitale che tratta di un argomento specifico.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>/Articolo</IRI>
+        <Literal xml:lang="it">Articolo</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>/ArticoloAccademico</IRI>
+        <Literal xml:lang="it">Un articolo scientifico pubblicato in una rivista accademica o conferenza, sottoposto a peer review.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>/ArticoloAccademico</IRI>
+        <Literal xml:lang="it">Articolo accademico</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>/AudibleStudios</IRI>
+        <Literal xml:lang="it">Audible Studios</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>/AudioLibro</IRI>
+        <Literal xml:lang="it">Una registrazione audio di un libro letto ad alta voce. Gli audiolibri sono disponibili in formato digitale e possono essere ascoltati su vari dispositivi.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>/AudioLibro</IRI>
+        <Literal xml:lang="it">Audiolibro</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>/Autore</IRI>
+        <Literal xml:lang="it">Un individuo che ha scritto o contribuito alla creazione di una risorsa digitale nella libreria.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>/Autore</IRI>
+        <Literal xml:lang="it">Autore</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>/AutoreDiSaga</IRI>
+        <Literal xml:lang="it">Definisce un autore che ha scritto uno o più libri facenti parte di una saga di libri</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>/AutoreDiSaga</IRI>
+        <Literal xml:lang="it">Autore di saga</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>/AutoreMultilingua</IRI>
+        <Literal xml:lang="it">Autore che ha scritto risorse in diverse lingue</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>/AutoreMultilingua</IRI>
+        <Literal xml:lang="it">Autore multilingua</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>/Avventura</IRI>
+        <Literal xml:lang="it">Indica il genere letterario avventura</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>/Avventura</IRI>
+        <Literal xml:lang="it">Avventura</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>/BarbascuraX</IRI>
+        <Literal xml:lang="it">Barbascura X</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>/Bloomsbury</IRI>
+        <Literal xml:lang="it">Bloomsbury</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>/CasaEditrice</IRI>
+        <Literal xml:lang="it">Organizzazione che si occupa della pubblicazione di una risorsa digitale.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>/CasaEditrice</IRI>
+        <Literal xml:lang="it">Casa Editrice</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>/EPUB</IRI>
+        <Literal xml:lang="it">Indica il formato EPUB</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>/EPUB</IRI>
+        <Literal xml:lang="it">EPUB</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>/Fantasy</IRI>
+        <Literal xml:lang="it">Fantasy</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>/Fantasy</IRI>
+        <Literal xml:lang="it">Indica il genere Fantasy</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>/Formato</IRI>
+        <Literal xml:lang="it">Indica il formato in cui è salvata la risorsa digitale</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>/Formato</IRI>
+        <Literal xml:lang="it">Formato</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>/Genere</IRI>
+        <Literal xml:lang="it">Indica il genere di una risorsa digitale</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>/Genere</IRI>
+        <Literal xml:lang="it">Genere</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>/HarryPotterChamberOfSecrets</IRI>
+        <Literal xml:lang="it">Harry Potter e la Camera dei Segreti</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>/HarryPotterDeathlyHallows</IRI>
+        <Literal xml:lang="it">Harry Potter e i Doni della Morte</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>/HarryPotterGobletOfFire</IRI>
+        <Literal xml:lang="it">Harry Potter e il Calice di Fuoco</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>/HarryPotterHalfBloodPrince</IRI>
+        <Literal xml:lang="it">Harry Potter e il Principe Mezzosangue</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>/HarryPotterOrderOfThePhoenix</IRI>
+        <Literal xml:lang="it">Harry Potter e l&apos;Ordine della Fenice</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>/HarryPotterPhilosopherStone</IRI>
+        <Literal xml:lang="it">Harry Potter e la Pietra Filosofale</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>/HarryPotterPrisonerOfAzkaban</IRI>
+        <Literal xml:lang="it">Harry Potter e il Prigioniero di Azkaban</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>/Inglese</IRI>
+        <Literal xml:lang="it">Indica la lingua inglese</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>/Inglese</IRI>
+        <Literal xml:lang="it">Inglese</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>/Italiano</IRI>
+        <Literal xml:lang="it">Indica la lingua italiana</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>/Italiano</IRI>
+        <Literal xml:lang="it">Italiano</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>/J.K.Rowling</IRI>
+        <Literal xml:lang="it">J.K. Rowling</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>/J.R.R.Tolkien</IRI>
+        <Literal xml:lang="it">J.R.R. Tolkien</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>/LaCompagniaDellAnello</IRI>
+        <Literal xml:lang="it">Il Signore degli Anelli - La compagnia dell&apos;anello</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>/Libro</IRI>
+        <Literal xml:lang="it">Una pubblicazione in formato digitale che contiene un testo esteso.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>/Libro</IRI>
+        <Literal xml:lang="it">Libro</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>/LibroLungo</IRI>
+        <Literal xml:lang="it">Un libro con almeno 500 pagine</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>/LibroLungo</IRI>
+        <Literal xml:lang="it">Libro lungo</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>/Lingua</IRI>
+        <Literal xml:lang="it">Indica la lingua in cui è scritta la risorsa digitale.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>/Lingua</IRI>
+        <Literal xml:lang="it">Lingua</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>/Lolita</IRI>
+        <Literal xml:lang="it">Lolita</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>/MP3</IRI>
+        <Literal xml:lang="it">Indica il formato MP3</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>/MP3</IRI>
+        <Literal xml:lang="it">MP3</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>/Mashenka</IRI>
+        <Literal xml:lang="it">Maria</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>/MassimoPopolizio</IRI>
+        <Literal xml:lang="it">Massimo Popolizio</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>/Narratore</IRI>
+        <Literal xml:lang="it">Persona che si occupa della narrazione di un podcast o di un audiolibro</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>/Narratore</IRI>
+        <Literal xml:lang="it">Narratore</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>/OlympiaPress</IRI>
+        <Literal xml:lang="it">Olympia Press</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>/PDF</IRI>
+        <Literal xml:lang="it">Indica il formato PDF</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>/PDF</IRI>
+        <Literal xml:lang="it">PDF</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>/Persona</IRI>
+        <Literal xml:lang="it">Una persona interessata nelle risorse digitali della libreria</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>/Persona</IRI>
+        <Literal xml:lang="it">Persona</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>/Podcast</IRI>
+        <Literal xml:lang="it">Registrazione audio, disponibile online, che tratta vari argomenti.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>/Podcast</IRI>
+        <Literal xml:lang="it">Podcast</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>/PrimaPuntataSBSS</IRI>
+        <Literal xml:lang="it">Prima puntata Storie Brutte Sulla Scienza</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="sequence:precedes"/>
+        <IRI>/PrimoVolumeHarryPotter</IRI>
+        <IRI>/SecondoVolumeHarryPotter</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>/PrimoVolumeHarryPotter</IRI>
+        <Literal xml:lang="it">Primo Volume Harry Potter</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>/PuntataPodcast</IRI>
+        <Literal xml:lang="it">Singola registrazione audio all&apos;interno di una serie</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>/PuntataPodcast</IRI>
+        <Literal xml:lang="it">Puntata Podcast</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="sequence:follows"/>
+        <IRI>/QuartoVolumeHarryPotter</IRI>
+        <IRI>/TerzoVolumeHarryPotter</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>/QuartoVolumeHarryPotter</IRI>
+        <Literal xml:lang="it">Quarto Volume Harry Potter</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="sequence:follows"/>
+        <IRI>/QuintoVolumeHarryPotter</IRI>
+        <IRI>/QuartoVolumeHarryPotter</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>/QuintoVolumeHarryPotter</IRI>
+        <Literal xml:lang="it">Quinto volume Harry Potter</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>/RisorsaAudio</IRI>
+        <Literal xml:lang="it">Una risorsa disponibile in formato audio digitale. Può includere audiolibri, podcast, registrazioni di lezioni e altri tipi di contenuti audio.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>/RisorsaAudio</IRI>
+        <Literal xml:lang="it">Risorsa audio</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>/RisorsaDigitale</IRI>
+        <Literal xml:lang="it">Una risorsa digitale che include articoli, libri e risorse audio come audiolibri.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>/RisorsaDigitale</IRI>
+        <Literal xml:lang="it">Risorsa digitale</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>/Romanzo</IRI>
+        <Literal xml:lang="it">Indica il genere lettarario romanzo</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>/Romanzo</IRI>
+        <Literal xml:lang="it">Romanzo</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>/Russo</IRI>
+        <Literal xml:lang="it">Indica la lingua russa</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>/Russo</IRI>
+        <Literal xml:lang="it">Russo</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>/SBSS_NikolaTesla</IRI>
+        <Literal xml:lang="it">Store Brutte Sulla Scienza - Nikola Tesla</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>/SBSS_ThomasEdison</IRI>
+        <Literal xml:lang="it">Storie Brutte Sulla Scienza - Thomas Edison</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="bag:hasItem"/>
+        <IRI>/SagaDiHarryPotter</IRI>
+        <IRI>/PrimoVolumeHarryPotter</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="bag:hasItem"/>
+        <IRI>/SagaDiHarryPotter</IRI>
+        <IRI>/QuartoVolumeHarryPotter</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="bag:hasItem"/>
+        <IRI>/SagaDiHarryPotter</IRI>
+        <IRI>/QuintoVolumeHarryPotter</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="bag:hasItem"/>
+        <IRI>/SagaDiHarryPotter</IRI>
+        <IRI>/SecondoVolumeHarryPotter</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="bag:hasItem"/>
+        <IRI>/SagaDiHarryPotter</IRI>
+        <IRI>/SestoVolumeHarryPotter</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="bag:hasItem"/>
+        <IRI>/SagaDiHarryPotter</IRI>
+        <IRI>/SettimoVolumeHarryPotter</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="bag:hasItem"/>
+        <IRI>/SagaDiHarryPotter</IRI>
+        <IRI>/TerzoVolumeHarryPotter</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>/SagaDiHarryPotter</IRI>
+        <Literal xml:lang="it">Saga di Harry Potter</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>/SagaDiLibri</IRI>
+        <Literal xml:lang="it">Serie di libri collegati fra loro, spesso con personaggi in comune e una trama continua.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>/SagaDiLibri</IRI>
+        <Literal xml:lang="it">Saga di libri</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="sequence:follows"/>
+        <IRI>/SecondaPuntataSBSS</IRI>
+        <IRI>/PrimaPuntataSBSS</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>/SecondaPuntataSBSS</IRI>
+        <Literal xml:lang="it">Seconda Puntata Storie Brutte Sulla Scienza</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>/SecondoVolumeHarryPotter</IRI>
+        <Literal xml:lang="it">Secondo Volume Harry Potter</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>/SeriePodcast</IRI>
+        <Literal xml:lang="it">Una collezione organizzata di puntate di uno specifico podcast, spesso su un argomento specifico o con un tema centrale</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>/SeriePodcast</IRI>
+        <Literal xml:lang="it">Serie di podcast</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="sequence:follows"/>
+        <IRI>/SestoVolumeHarryPotter</IRI>
+        <IRI>/QuintoVolumeHarryPotter</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="sequence:follows"/>
+        <IRI>/SettimoVolumeHarryPotter</IRI>
+        <IRI>/SestoVolumeHarryPotter</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>/Slovo</IRI>
+        <Literal xml:lang="it">Casa editrice di inizio &apos;900.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>/Slovo</IRI>
+        <Literal xml:lang="it">Slovo</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="bag:hasItem"/>
+        <IRI>/StorieBrutteSullaScienza</IRI>
+        <IRI>/PrimaPuntataSBSS</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="bag:hasItem"/>
+        <IRI>/StorieBrutteSullaScienza</IRI>
+        <IRI>/SecondaPuntataSBSS</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>/StorieBrutteSullaScienza</IRI>
+        <Literal xml:lang="it">Storie Brutte Sulla Scienza</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="sequence:follows"/>
+        <IRI>/TerzoVolumeHarryPotter</IRI>
+        <IRI>/SecondoVolumeHarryPotter</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>/TerzoVolumeHarryPotter</IRI>
+        <Literal xml:lang="it">Terzo Volume Harry Potter</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>/VladimirNabokov</IRI>
+        <Literal xml:lang="it">Vladimir Nabokov</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>/VolumeSaga</IRI>
+        <Literal xml:lang="it">Singolo libro all&apos;interno di una saga di libri</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>/VolumeSaga</IRI>
+        <Literal xml:lang="it">Volume saga</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>/contieneLibro</IRI>
+        <Literal xml:lang="it">Collegamento tra la risorsa e il libro che contiene</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>/contieneLibro</IRI>
+        <Literal xml:lang="it">Contiene libro</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>/contienePuntata</IRI>
+        <Literal xml:lang="it">Collegamento tra la risorsa e il podcast che contiene</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>/contienePuntata</IRI>
+        <Literal xml:lang="it">Contiene puntata</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>/durataInOre</IRI>
+        <Literal xml:lang="it">Indica la durata in ore di una risorsa digitale</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>/durataInOre</IRI>
+        <Literal xml:lang="it">Durata in ore</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>/haAnnoPubblicazione</IRI>
+        <Literal xml:lang="it">Indica l&apos;anno di pubblicazione di una certa risorsa digitale.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>/haAnnoPubblicazione</IRI>
+        <Literal xml:lang="it">Anno pubblicazione</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>/haAutore</IRI>
+        <Literal xml:lang="it">Indica l&apos;autore di una certa risorsa digitale</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>/haAutore</IRI>
+        <Literal xml:lang="it">Ha autore.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>/haCasaEditrice</IRI>
+        <Literal xml:lang="it">Indica l&apos;editore di una certa risorsa digitale</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>/haCasaEditrice</IRI>
+        <Literal xml:lang="it">Ha casa editrice</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>/haFormato</IRI>
+        <Literal xml:lang="it">Indica il formato di una certa risorsa digitale</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>/haFormato</IRI>
+        <Literal xml:lang="it">Ha formato</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>/haGenere</IRI>
+        <Literal xml:lang="it">Indica il genere di una certa risorsa digitale</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>/haGenere</IRI>
+        <Literal xml:lang="it">Ha genere</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>/haISBN</IRI>
+        <Literal xml:lang="it">L&apos;International Standard Book Number, ISBN, utilizzato normalmente per identificare i libri pubblicati.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>/haISBN</IRI>
+        <Literal xml:lang="it">ISBN</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>/haLingua</IRI>
+        <Literal xml:lang="it">Indica la lingua di una certa risorsa digitale</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>/haLingua</IRI>
+        <Literal xml:lang="it">Ha lingua</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>/haNarrato</IRI>
+        <Literal xml:lang="it">Indica la risorsa audio narrata da un certo narratore</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>/haNarrato</IRI>
+        <Literal xml:lang="it">Ha narrato</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>/haNarratore</IRI>
+        <Literal xml:lang="it">Rappresenta la relazione tra una risorsa audio e colui che l&apos;ha narrata.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>/haNarratore</IRI>
+        <Literal xml:lang="it">Ha narratore</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>/haNome</IRI>
+        <Literal xml:lang="it">Proprietà che definisce il nome di una persona o di una organizzazione</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>/haNome</IRI>
+        <Literal xml:lang="it">Ha nome</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>/haPubblicato</IRI>
+        <Literal xml:lang="it">Indica la relazione tra l&apos;editore e la risorsa digitale che ha pubblicato</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>/haPubblicato</IRI>
+        <Literal xml:lang="it">Ha pubblicato</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>/haScritto</IRI>
+        <Literal xml:lang="it">Indica la risorsa digitale scritta da un certo autore.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>/haScritto</IRI>
+        <Literal xml:lang="it">Ha scritto</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>/haTitolo</IRI>
+        <Literal xml:lang="it">Indica il titolo di una risorsa digitale.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>/haTitolo</IRI>
+        <Literal xml:lang="it">ha titolo</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>/nazionalità</IRI>
+        <Literal xml:lang="it">Indica la nazionalità di un autore</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>/nazionalità</IRI>
+        <Literal xml:lang="it">Nazionalità</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>/nomeAutore</IRI>
+        <Literal xml:lang="it">Indica il nome e il cognome dell&apos;autore</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>/nomeAutore</IRI>
+        <Literal xml:lang="it">Nome autore</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>/nomeEditore</IRI>
+        <Literal xml:lang="it">Indica il nome della casa editrice.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>/nomeEditore</IRI>
+        <Literal xml:lang="it">Nome editore</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>/nomeFormato</IRI>
+        <Literal xml:lang="it">Definisce il nome di un formato.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>/nomeFormato</IRI>
+        <Literal xml:lang="it">nome formato</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>/nomeGenere</IRI>
+        <Literal xml:lang="it">Definisce il nome di un genere letterario.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>/nomeGenere</IRI>
+        <Literal xml:lang="it">nome genere</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>/nomeNarratore</IRI>
+        <Literal xml:lang="it">Indica il nome di un narratore di risorse audio</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>/nomeNarratore</IRI>
+        <Literal xml:lang="it">Nome narratore</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>/numeroPagine</IRI>
+        <Literal xml:lang="it">Indica il numero di pagine di una certa risorsa digitale</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>/numeroPagine</IRI>
+        <Literal xml:lang="it">Numero di pagine</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>/numeroPuntate</IRI>
+        <Literal xml:lang="it">indica il numero di puntate presenti nella serie di un podcast</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>/numeroPuntate</IRI>
+        <Literal xml:lang="it">Numero di puntate</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>/numeroVolumi</IRI>
+        <Literal xml:lang="it">Indica il numero di volumi presenti in una saga di libri</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>/numeroVolumi</IRI>
+        <Literal xml:lang="it">Numero di volumi</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>/scriveGenere</IRI>
+        <Literal xml:lang="it">Indica il genere di cui scrive un certo autore</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>/scriveGenere</IRI>
+        <Literal xml:lang="it">Scrive genere</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>/scriveInLingua</IRI>
+        <Literal xml:lang="it">Proprietà che indica in quale Lingua ha scritto un certo Autore.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>/scriveInLingua</IRI>
+        <Literal xml:lang="it">Scrive in lingua</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>/stessoGenereDi</IRI>
+        <Literal xml:lang="it">Proprietà che indica che una certa RisorsaDigitale abbia lo stesso genere di un&apos;altra RisorsaDigitale</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>/stessoGenereDi</IRI>
+        <Literal xml:lang="it">Stesso genere di</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>/tradotto</IRI>
+        <Literal xml:lang="it">Indica se la risorsa in questione è stata tradotta o meno in altre lingue</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>/tradotto</IRI>
+        <Literal xml:lang="it">Tradotto</Literal>
+    </AnnotationAssertion>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
